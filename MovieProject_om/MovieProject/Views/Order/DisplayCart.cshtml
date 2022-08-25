@@ -1,0 +1,44 @@
+﻿@model MovieProject.ViewModels.DisplayCart
+@{
+    ViewBag.Title = "DisplayCart";
+}
+
+<h2>DisplayCart</h2>
+
+<div>
+
+    @foreach (var item in Model.MovieListCart)
+    {
+    <div class="row">
+        <div class="col-md-4">
+            @item.Title
+        </div>
+        <div class="col-md-1" style="text-align:right">
+            @item.MovieQty
+        </div>
+        <div class="col-md-1">
+            <a href="@Url.Action("AddtoCart", "Order", new { id=item.Id, returnAction = "DisplayCart",returnController = "Order"  })"><img src="~/Content/Images/plus.jpg" width="30" /></a>
+            <a href="@Url.Action("RemovefromCart", "Order", new { id=item.Id })"><img src="~/Content/Images/minus.jpg" width="30" /></a>
+        </div>
+        <div class="col-md-2">
+            SEK @item.ItemPrice
+        </div>
+        <div class="col-md-2">
+            SEK @item.AggregatePriceMovie
+        </div>
+    </div>
+    }
+
+    <div class="offset-md-8 col-md-2">
+        SEK @Model.TotalPrice
+    </div>
+</div>
+
+<div class="row">
+    <div class="offset-md-4 col-md-4">
+        @Html.ActionLink("Continue shopping","DisplayMovies", "Movie",null, new { @class = "btn btn-lg btn-primary" })
+    </div>
+    <div class="col-md-2">
+        @Html.ActionLink("Login", "Login", "Customer", null,new { @class = "btn btn-lg btn-primary" })
+    </div>
+    </div>

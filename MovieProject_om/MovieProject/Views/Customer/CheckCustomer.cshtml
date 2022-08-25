@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "CheckCustomer";
+}
+
+<h2>Login or register</h2>
+
+<div class="col-md-6">
+    <h2>If you are registered customer - Login</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.Editor("Email")
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Login" class="btn btn-default" />
+            </div>
+        </div>
+    }
+
+    <h2>New Customer - Register</h2>
+    @Html.ActionLink("Click here","AddCustomer", null, new { @class = "btn btn-primary btn-large" })
+
+</div>

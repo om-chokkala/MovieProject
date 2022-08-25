@@ -1,0 +1,28 @@
+﻿@model MovieProject.Models.Movie
+
+
+<td>
+    @Html.DisplayFor(model => model.Title)
+</td>
+
+<td>
+    @Html.DisplayFor(model => model.Director)
+</td>
+
+<td>
+    @Html.DisplayFor(model => model.ReleaseYear)
+</td>
+
+<td>
+    @Html.DisplayFor(model => model.Price)
+</td>
+
+<td>
+    <img src="@(Model.ImageUrl != null ?Url.Content(Model.ImageUrl): "")" width="100" height="100" />
+</td>
+
+<td>
+    @Html.ActionLink("Add to Cart", "AddtoCart","Order", new { id = Model.Id, returnAction="DisplayMovies", returnController = "Movie" }, new { @class = "btn btn-primary btn-large" }) |
+
+</td>
+

@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<h3>If you are already a customer - login</h3>
+
+@using (Html.BeginForm())
+{
+<div class="row">
+    <div class=" col-md-3">
+        <h4>Enter your E-mail Address</h4>
+    </div>
+    <div class="col-md-3">
+        <input type="text"  name="email" id="email"/>
+    </div>
+    <div class="col-md-2">
+        <input type="submit" value="Log in" />
+    </div>
+</div>
+}
+
+<h3>If You are a new customer</h3>
+@Html.ActionLink("Register", "AddCustomer", "Customer", null, new { @class = "btn btn-lg btn-primary" })
+
+
+

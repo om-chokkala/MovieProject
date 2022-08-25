@@ -1,0 +1,27 @@
+﻿@model MovieProject.Models.Order
+
+@{
+    ViewBag.Title = "OrderConfirmation";
+}
+
+<h2>OrderConfirmation</h2>
+
+<div>
+    <h4>@ViewBag.Message</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to Shop", "DisplayMovies", "Movie")
+</p>

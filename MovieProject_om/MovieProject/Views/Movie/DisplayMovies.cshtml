@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MovieProject.Models.Movie>
+
+@{
+    ViewBag.Title = "DisplayMovies";
+}
+
+<h2>DisplayMovies</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddMovie")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Director)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </th>
+        <th>Buy</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       @Html.Partial("_DisplayMoviePartial", item)
+    </tr>
+}
+
+</table>
